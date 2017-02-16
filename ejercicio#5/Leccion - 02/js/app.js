@@ -14,3 +14,32 @@
 	.eq(2).addClass("green").end()
 	.eq(3).addClass("pink").end()
 	.eq(4).addClass("orange").end();
+
+
+
+
+
+	$(document).ready(function(){
+   	$("#input").keypress(function(){
+    		return ()
+	});
+});
+
+
+
+	<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Saludo</title>
+
+  <link href="style.css" rel="stylesheet">
+</head>
+<body>
+  <h1>¿Cómo te llamas?</h1>
+  <input id="input" type="text">
+    
+  <script src="https://code.jquery.com/jquery-3.1.1.js"   integrity="sha256-16cdPddA6VdVInumRGo6IbivbERE8p7CQR3HzTBuELA="   crossorigin="anonymous"></script>
+  <script src="app.js"></script>
+</body>
+</html>

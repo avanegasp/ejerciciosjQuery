@@ -12,5 +12,13 @@ $('ul').addClass('textBlue')
 
 
 
+ 
+$(document).ready(function(){
+$( "#input" )
+  .keyup(function(value) {
+    var value = $( this ).val();
+    $( "h1" ).text( "Hola " + value + "!");
+  })
+ });
 
 
