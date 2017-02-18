@@ -39,8 +39,7 @@ $(document).ready(function(){
 
 */
 
-
-
+/*
 $(document).ready(function(){
 
     var max_chars = 0;
@@ -52,10 +51,76 @@ $(document).ready(function(){
         var diff = max_chars + chars;
         $('.counter').html(diff);
         if(diff > 80){
+        	$('textarea').removeCLass('colorBlack');
         	$('textarea').addClass('colorRed');
         }else{
-        	return $('textarea').addClass('colorBlack');
+        	return $('textarea').removeCLass('colorBlack');
+        	$('textarea').addClass('colorRed');
         };
     });
 });
+*/
+
+/*
+$(document).ready(function(){
+
+    var max_chars = 0;
+
+    $('#max').html(max_chars);
+
+    $('textarea').keyup(function() {
+        var chars = $(this).val().length;
+        var diff = max_chars + chars;
+        $('.counter').html(diff);
+        if(diff > 80){
+        	$('textarea').css('border-color', 'red');
+        	$('textarea').css('border-width','5px');
+        	$('.counter').css('color','red');
+
+        }else{
+        	$('textarea').css('border','1px solid #B5B5A8');
+        	$('.counter').css('color','#666');
+        };
+    });
+});
+*/
+
+/*
+$('document').ready(function(){
+
+var click = 0;
+
+
+$('#add').on('click', function(){
+	$('ul').addClass('.marked');
+});
+
+});
+
+*/
+
+
+
+
+(function(){
+
+	var contador = 0;
+
+	$("#add").on("click", function(){
+
+	contador = contador + 1;
+
+	var Dinamico = "Elemento " + contador + "<hr>";
+		
+		//$('body').append(dinamico);
+		//$('body').prepend(dinamico);
+		$('.elements').append(Dinamico);
+});
+		
+	$('ul').on('click', function(){
+		$('ul').addClass('marked'); // falta agregar el ul li en css
+	});
+
+})();
+
 
