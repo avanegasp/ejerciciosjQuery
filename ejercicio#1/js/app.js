@@ -106,21 +106,25 @@ $('#add').on('click', function(){
 
 	var contador = 0;
 
-	$("#add").on("click", function(){
+	$('#add').on('click', function(){
 
-	contador = contador + 1;
+	contador = (contador * 1) + 1;
 
-	var Dinamico = "Elemento " + contador + "<hr>";
+	var dinamico = '<li>Elemento ' + contador + '</li>';
 		
 		//$('body').append(dinamico);
 		//$('body').prepend(dinamico);
-		$('.elements').append(Dinamico);
+		$('.elements').append(dinamico);
 });
 		
-	$('ul').on('click', function(){
-		$('ul').addClass('marked'); // falta agregar el ul li en css
+	$('ul').on('click', 'li', function(){
+		$(this).addClass('marked'); 
+		
 	});
 
+	
 })();
+
+
 
 
