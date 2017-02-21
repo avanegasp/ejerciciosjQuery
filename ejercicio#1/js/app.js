@@ -101,7 +101,7 @@ $('#add').on('click', function(){
 
 
 
-
+/*
 (function(){
 
 	var contador = 0;
@@ -118,12 +118,40 @@ $('#add').on('click', function(){
 });
 		
 	$('ul').on('click', 'li', function(){
-		$(this).addClass('marked'); 
+		$(this).toggleClass('marked'); 
 		
 	});
 
-	
 })();
+*/
+
+/*
+
+$('.list').on('click', 'li', function(){
+	$(this).appendTo('.done');
+
+	$('.done').on('click', 'li', function(){
+		$(this).appendTo('.todo');
+	});
+});
+
+*/
+
+
+$("#new-task").keyup(function(e) {
+   		if(e.which == 13) {
+      		var value = $( this ).val();
+
+      // Acciones a realizar, por ej: enviar formulario.
+      $('.todo').append(function(){
+      			
+      			return "<li>"  + value +"";
+
+      });	
+      			$(this).val('');
+  };
+
+});
 
 
 
