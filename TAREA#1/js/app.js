@@ -1,3 +1,5 @@
+/*
+
 (function(){
 
 	var contador = 0;
@@ -31,3 +33,16 @@
 	});
 
 })();
+
+*/
+
+$(document).ready(function(){ 
+    $('.alternar-respuesta').on('click',function(e){
+        $(this).parent().next().toggle();
+        e.preventDefault();
+    });
+    $('#alternar-todo').on('click',function(e){
+        $('.respuesta').toggle('slow');
+        e.preventDefault();
+    });
+});
