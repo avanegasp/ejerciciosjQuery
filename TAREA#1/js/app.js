@@ -23,4 +23,11 @@
 
 });
 
+	// Función que detecta el cambio de la base
+
+	$("#cmbBase").on("change", function(){
+		$('tr').not(":eq(0)").remove();
+			contador=0;
+	});
+
 })();
