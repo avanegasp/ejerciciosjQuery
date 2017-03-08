@@ -29,7 +29,7 @@
 	-->
 	
 	<div class="divVistaPrevia">
-		<img src="img/tesla/modelS-blanco.jpg" class="img-responsive">
+		<img id="imgCarro"  src="img/tesla/modelS-blanco.jpg" class="img-responsive">
 	</div>
 
 	<div class="form-group">
@@ -48,12 +48,16 @@
 
 <script>
 	
-(function(){
+$('#cmbColor').on('change',function(){
+	 
+	 var color = $(this).val();
+	 var url = "img/tesla/modelS-" + color + ".jpg";
+
+	$("#imgCarro").attr("src", url); 
 
 
 
-
-})();
+});
 
 </script>
 
