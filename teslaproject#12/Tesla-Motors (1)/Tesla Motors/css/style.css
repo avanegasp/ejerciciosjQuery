@@ -1,0 +1,17 @@
+.divPreloader {
+	position: absolute;
+	opacity: 0.1
+}
+
+
+.form-group{
+	position: relative;
+	bottom: 150px;
+}
+
+@media (max-width: 1000px) {
+	
+	.form-group{
+		bottom: 50px;
+	}
+}

@@ -22,11 +22,11 @@
 	<hr>
 	
 
-	<!-- 
+	 
 	<div class="divPreloader">
 		<img src="img/loading.gif" class="imgLoader img-responsive">
 	</div> 
-	-->
+	
 	
 	<div class="divVistaPrevia">
 		<img id="imgCarro"  src="img/tesla/modelS-blanco.jpg" class="img-responsive">
@@ -48,19 +48,65 @@
 
 <script>
 	
-$('#cmbColor').on('change',function(){
-	 
-	 var color = $(this).val();
-	 var url = "img/tesla/modelS-" + color + ".jpg";
 
-	$("#imgCarro").attr("src", url); 
+	
+	(function(){
+
+		var teslaView = {
+			colores: ['Blanco', 'Cafe', 'Negro', 'Verde', 'Rojo'],
+
+			//Funcion para cambiar el color 
+			cambiarColor:function(img){
+
+			}
+
+			//Funcion Principal
+
+			init:function(opciones){
+
+			$.extend( teslaView, opciones)
+
+
+			//Ciclo para crear nuestro arreglo de colores y crear nuestro
+			// combobox(o select)
+			for(var i=0; i<teslaView.colores.length; i++){
+				var color= teslaView.colores[i];
+
+				$("<option>",{
+					value:color,
+					text:color,
+				}).appendTo('#cmbColor')
+			}
+
+		// Nueva función del cambio 
+		
+			$('#cmbColor').on('change',function(){
+				 
+				 var color = $(this).val();
+				 var url = "img/tesla/modelS-" + color + ".jpg";
+
+				$("#imgCarro").attr("src", url); 
 
 
 
-});
+			});	
+
+		}	
+
+		
+		
+		}
+
+			teslaView.init({
+				colores:['azul', 'gris']
+			});
+
+
+
+})();		
+
 
 </script>
-
 
 
 
