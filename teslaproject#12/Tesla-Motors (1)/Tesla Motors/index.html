@@ -29,7 +29,7 @@
 	
 	
 	<div class="divVistaPrevia">
-		<img id="imgCarro"  src="img/tesla/modelS-blanco.jpg" class="img-responsive">
+		<img id="imgCarro"  class="img-responsive">
 	</div>
 
 	<div class="form-group">
@@ -53,12 +53,36 @@
 	(function(){
 
 		var teslaView = {
+			loader: $(".divPreloader"),
 			colores: ['Blanco', 'Cafe', 'Negro', 'Verde', 'Rojo'],
 
 			//Funcion para cambiar el color 
 			cambiarColor:function(img){
 
-			}
+				var $loader = teslaView.loader;
+				$loader.fadeIn(150)
+
+				if( img === undefined){
+					var color = teslaView.colores[0];
+					
+					img = "img/tesla/modelS-" + color + ".jpg";
+				}
+
+
+				$('<img>',{
+					src: img,
+					class: "img-responsive"
+				})
+					.load(function(){
+						console.log("imagen cargada")
+
+						$(".divVistaPrevia").find("img").remove();
+						$(this).appendTo(".divVistaPrevia");
+					
+						$loader.fadeOut(150);
+					})
+
+			},
 
 			//Funcion Principal
 
@@ -80,21 +104,21 @@
 
 		// Nueva función del cambio 
 		
-			$('#cmbColor').on('change',function(){
+			$('#cmbColor').bind('change',function(){
 				 
 				 var color = $(this).val();
 				 var url = "img/tesla/modelS-" + color + ".jpg";
 
-				$("#imgCarro").attr("src", url); 
-
-
-
+				 teslaView.cambiarColor(url)
+				//$("#imgCarro").attr("src", url); 
 			});	
+
+		// cambiar la imagen al iniciar
+				
+			teslaView.cambiarColor()		
 
 		}	
 
-		
-		
 		}
 
 			teslaView.init({
