@@ -137,78 +137,88 @@
 </html>
 -->
 
-
-
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>Nuevos elementos</title>
-  <link rel='stylesheet' href=>
- 
-
 <style>
-body {
-  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+
+.action {
+  margin-top: 30px;
 }
 
-.list {
-  display: inline-block;
-  width: 330px;
-  
-  vertical-align: top;
-  margin: 0 50px;
-}
-
-ul {
-  font-size: 18px;
-  background-color: #f5f5f2;
-  padding: 0;
-  min-height: 50px;
-  border: 1px solid #DBDBD3;
-}
-
-ul li {
-  color: #66665D;
-  list-style-type: none;
-  padding: 20px;
-  cursor: pointer;
-  border-bottom: 1px solid #DBDBD3;
-}
-
-ul li:last-child {
-  border-bottom: none;
-}
-
-input[type=text] {
-  box-sizing: border-box;
-  font-size: 16px;
-  width: 100%;
-  border: 1px solid #ccc;
-  padding: 13px;
-}
 </style>
 
 </head>
 
 <body>
 
-<div class="wrapper">
-  <div class="list">
-    <h3>Por hacer:</h3>
-    <ul class="todo">
-      <li>Sacar la ropa</li>
-      <li>Hacer la cama</li>
-      <li>Leer un rato</li>
-    </ul>
-    <input type="text" id="new-task" placeholder="Ingresa una tarea y oprime Enter">
-  </div>
+<form name="formulario" id="formulario" class="formulario" action="" method="post">  
+<ul>  
+<li>Nombre <span>(*)</span></li>  
+<li>Apellidos <span>(*)</span></li>  
+<li><input name="nombre" id="nombre" type="text" /></li>  
+<li><input name="apellidos" id="apellidos" type="text" /></li>  
+<li>Teléfono <span>(*)</span></li>  
+<li>E-Mail <span>(*)</span></li>  
+<li><input name="telefono" id="telefono" type="text" /></li>  
+<li><input name="email" id="email" type="text" /></li>  
+<li>Localidad <span>(*)</span></li>  
+<li>Provincia <span>(*)</span></li>  
+<li><input name="localidad" id="localidad" type="text" /></li>  
+<li>  
+<select name="provincia" id="provincia" class="mail_provincia">  
+...............................  
+</select>  
+</li>  
+<li>¿Desea apuntarse al boletín de noticias? <span>(*)</span></li>  
+<li>&nbsp;</li>  
+<li>  
+<input name="boletin" id="boletin" type="radio" value="Si" /> Si  
+<input name="boletin" id="boletin" type="radio" value="No" /> No  
+</li>  
+<li>&nbsp;</li>  
+<li>¿Cada cuanto nos visitas? <span>(*)</span></li>  
+<li>&nbsp;</li>  
+<li><input name="visitas" id="visitas" type="checkbox" value="diariamente" /> Diariamente</li>  
+<li>&nbsp;</li>  
+<li><input name="visitas" id="visitas" type="checkbox" value="semanalmente" /> Semanalmente</li>  
+<li>&nbsp;</li>  
+<li><input name="visitas" id="visitas" type="checkbox" value="mensualmente" /> Mensualmente</li>  
+<li>&nbsp;</li>  
+<li class="botones"><input name="submit" id="submit" type="submit" value="Validar" /></li>  
+<li class="botones"><input name="reset" id="reset" type="reset" value="Restablecer" /></li>  
+</ul>  
+</form>  
+
+
 </div>
-  
+
+
+<div class="container">
+    <div class="col-sm-6 col-sm-offset-3">
+      <h1>Formulario de Registro</h1>
+      <form>
+        <div class="form-group">
+          <label class="control-label" for="username">Usuario:</label>
+          <input type="text" class="form-control input-lg" id="username" placeholder="Ingresa un usuario">
+          <p class="help-block"></p>
+        </div>
+        <div class="form-group">
+          <label class="control-label" for="password">Contraseña</label>
+          <input type="password" class="form-control input-lg" id="password" placeholder="Ingresa una contraseña">
+          <p class="help-block"></p>
+        </div>
+        <div class="checkbox terms-checkbox">
+          <label>
+            <input type="checkbox" id="terms"> Acepto los términos y condiciones
+          </label>
+        </div>
+        <div class="action text-right">
+          <button type="submit" class="btn btn-primary btn-block btn-lg">Registrarse</button>
+        </div>
+      </form>
+    </div>
+  </div>
 
     <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
-  	<script type="text/javascript" src="js/app.js"></script>  
+    <script type="text/javascript" src="js/app.js"></script>  
+
 </body>
 </html>
-
-</div>

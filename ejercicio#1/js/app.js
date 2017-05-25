@@ -136,23 +136,67 @@ $('.list').on('click', 'li', function(){
 });
 
 */
-
-
-$("#new-task").keyup(function(e) {
-   		if(e.which == 13) {
-      		var value = $( this ).val();
-
-      // Acciones a realizar, por ej: enviar formulario.
-      $('.todo').append(function(){
-      			
-      			return "<li>"  + value +"";
-
-      });	
-      			$(this).val('');
-  };
-
+$(document).ready(function(){  
+    $("#formulario").submit(function () {  
+        if($("#nombre").val().length < 4) {  
+            alert("El nombre debe tener más de 3 caracteres");  
+            return false;  
+        }  
+        if($("#apellidos").val().length < 4) {  
+            alert("Los apellidos deben tener más de 3 caracteres");  
+            return false;  
+        }  
+        if($("#telefono").val().length < 4 || isNaN($("#telefono").val())) {  
+            alert("El teléfono debe tener más de 3 caracteres y solo números");  
+            return false;  
+        }  
+        if($("#email").val().length < 1) {  
+            alert("La dirección e-mail es obligatoria");  
+            return false;  
+        }  
+        if($("#email").val().indexOf('@', 0) == -1 || $("#email").val().indexOf('.', 0) == -1) {  
+            alert("La dirección parece incorrecta");  
+            return false;  
+        }  
+        if($("#localidad").val().length < 1) {  
+            alert("La localidad es obligatoria");  
+            return false;  
+        }  
+        if($("#provincia option:selected").val() == "") {  
+            alert("La provincia es obligatoria");  
+            return false;  
+        }  
+        if($("#localidad").val().length < 1) {  
+            alert("La localidad es obligatoria");  
+            return false;  
+        }  
+        if($("#boletin").is(':checked')) { } else {  
+            alert("Indique si desea apuntarse al boletín de noticias");  
+            return false;  
+        }  
+        if($("#visitas").is(':checked')) { } else {  
+            alert("Indique cada cuanto nos visitas");  
+            return false;  
+        }  
+        return false;  
+    });  
 });
 
 
 
 
+
+
+
+
+
+
+
+
+ $('form').submit(function (e) {
+      e.preventDefault();
+        if($('#password').val().length < 4) {  
+            alert("la contraseña debe tener menos de 4 caracteres");  
+            return false;  
+     }; 
+});

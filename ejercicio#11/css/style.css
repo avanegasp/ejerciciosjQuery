@@ -1,0 +1,29 @@
+
+
+#filaUno td{
+  color: red;
+  font-size: 40px;
+  /*background: yellow;*/
+  /*border: 1px solid green;*/
+}
+
+#filaUno .arranque1{
+  background: blue;
+}
+
+#filaDos .arranque2{
+  background: green;
+}
+
+
+#filaDos td{
+  color: red;
+  font-size: 40px;
+  /*background: purple;*/
+
+  /*border: 1px solid green;*/
+}
+
+/*#filaUno .uno td{
+  border: 1px solid red;
+}*/
